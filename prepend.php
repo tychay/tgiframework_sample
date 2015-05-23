@@ -57,9 +57,10 @@ define('APP_INC_DIR', APP_DIR.DIRECTORY_SEPARATOR.'inc');
  * hash.
  */
 //define('APP_CLASSMAP_PATH', APP_INC_DIR.DIRECTORY_SEPARATOR.'class_map_table.php');
-//
+
 // $symbol
 $symbol_file = APP_DIR.DIRECTORY_SEPARATOR.'__symbol.php';
+global $symbol;
 if (file_exists($symbol_file)) {
     /**
      * @global string
@@ -78,12 +79,11 @@ if (file_exists($symbol_file)) {
  */
 define('TGIF_CONF_PATH', APP_DIR.DIRECTORY_SEPARATOR.'config');
 
-// load tgiframework preinclude
 /**
- * Common symbols and objects
+ * Load TGIFramework (in a post-Composer world)
  */
-include_once(TGIF_DIR.'/inc/preinclude.php');
+require_once BASE_DIR.'/tgif/vendor/autoload.php';
 
 // Set character encoding
-// Start session
-// PEAR + Smarty
+// TAGGED: Start session
+// TAGGED: PEAR + Smarty
