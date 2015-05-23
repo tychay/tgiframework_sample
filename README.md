@@ -9,7 +9,7 @@ Installation instructions for [tgif_vagrant](https://github.com/tychay/tgif_vagr
 ## Filestructure ##
 
 - **class/**: class libraries where the directory structure maps into
-              str_replace('_',DIR_SEP,$class_name).'.php';
+              `str_replace('_',DIR_SEP,$class_name).'.php';`
 - **conf/**:  configuration for sample website (no need for prod/whatever
               separator like in Tagged.)
 - **res/**:   data resources used elsewhere (not used currently)
