@@ -1,4 +1,5 @@
 <?php
+require_once '../prepend.php';
 global $_TAG;
 ?><html><head><title>Some examples of framework features</title>
 <body><?php

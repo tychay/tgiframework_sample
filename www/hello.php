@@ -10,6 +10,11 @@
  * @license GNU Lesser General Public License <http://www.gnu.org/licenses/lgpl.html>
  * @author terry chay <tychay@php.net>
  */
+/**
+ * init
+ */
+require_once '../prepend.php';
+global $_TAG;
 $page = new tgif_page();
 $page->assign('title','Test');
 $page->assign('greeting','Hello world');

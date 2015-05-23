@@ -20,48 +20,45 @@
  */
 $_start_time = microtime();
 // Set common symbols {{{
-// BASE_DIR {{{
+// BASE_DIR
 /**
  * The directory where the code tree is stored
  */
 define('BASE_DIR', dirname(realpath(__DIR__)));
 // }}}
-// TGIF_DIR {{{
+
+// TGIF_DIR
 /**
  * The directory where the framework code is stored
  * @ignore
  */
-define('TGIF_DIR', BASE_DIR.DIRECTORY_SEPARATOR.'framework');
-// }}}
-// APP_DIR {{{
-if (!defined('APP_DIR')) {
-    /**
-     * The directory where app code is stored (this can be overridden before using this script)
-     */
-    define('APP_DIR', BASE_DIR.DIRECTORY_SEPARATOR.'samples');
-}
-// }}}
-// APP_CLASS_DIR {{{
+define('TGIF_DIR', BASE_DIR.'/tgif/framework');
+
+// APP_DIR
+/**
+ * The directory where app code is stored
+ */
+define('APP_DIR', __DIR__);
+
+// APP_CLASS_DIR 
 /**
  * The directory where app code is stored
  */
 define('APP_CLASS_DIR', APP_DIR.DIRECTORY_SEPARATOR.'class');
-// }}}
-// APP_INC_DIR {{{
+// APP_INC_DIR
 /**
  * The directory where free energy includes are stored
  */
 define('APP_INC_DIR', APP_DIR.DIRECTORY_SEPARATOR.'inc');
-// }}}
-// APP_CLASSMAP_PATH {{{
+// APP_CLASSMAP_PATH
 /*
  * Not reocommended way of accessing a backward compatibility class mapping
  * table. Instead, define a configuration called "classmaps" that is an array
  * hash.
  */
 //define('APP_CLASSMAP_PATH', APP_INC_DIR.DIRECTORY_SEPARATOR.'class_map_table.php');
-// }}}
-// $symbol {{{
+//
+// $symbol
 $symbol_file = APP_DIR.DIRECTORY_SEPARATOR.'__symbol.php';
 if (file_exists($symbol_file)) {
     /**
@@ -74,21 +71,19 @@ if (file_exists($symbol_file)) {
 } else {
     $symbol = 'SAM'; //Samples
 }
-// }}}
-// TGIF_CONF_PATH {{{
+
+// TGIF_CONF_PATH
 /*
  * Where to get config overrides
  */
 define('TGIF_CONF_PATH', APP_DIR.DIRECTORY_SEPARATOR.'config');
-// }}}
-// }}}
-// load common preinclude {{{
+
+// load tgiframework preinclude
 /**
  * Common symbols and objects
  */
 include_once(TGIF_DIR.'/inc/preinclude.php');
-// }}}
+
 // Set character encoding
 // Start session
 // PEAR + Smarty
-?>
