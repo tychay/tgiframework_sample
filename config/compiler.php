@@ -13,7 +13,7 @@
 return array(
     //'_readConfig'   => true,
     'dir_static'                => APP_DIR.'/www/m',
-    'url_static'                => '/tgif/m', //TODO: EDIT ME
+    'url_static'                => '/m', 
     // $_TAG->css {{{
     //'gld_css.ids.signature_method'  => array('tgif_compiler','sign_md5'), //try using md5 hash
     //'gld_css.ids.signature_method'  => array('tgif_compiler','sign_global'), //try using a global version
