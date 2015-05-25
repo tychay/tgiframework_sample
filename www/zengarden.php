@@ -152,6 +152,8 @@ $_TAG->css->printAll(array('media'=>'screen','title'=>'currentStyle'));
 
 <?php
 	$_TAG->js->printAll();
+	var_dump($_TAG->css);
+	var_dump($_TAG->js);
 	$data = $_TAG->diagnostics->summary('data');
 	var_dump($data);
 	foreach ($data['times'] as $key=>$times) {
