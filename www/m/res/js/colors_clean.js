@@ -1,6 +1,6 @@
 /**
  * Example from http://developer.yahoo.com/yui/examples/animation/colors.html
- * @package tgisamples
+ * @package tgif_sample
  * @requires YAHOO/animation
  */
 (function() {

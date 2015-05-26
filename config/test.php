@@ -1,10 +1,8 @@
 <?php
-// vim:set expandtab tabstop=4 shiftwidth=4 softtabstop=4 foldmethod=marker syntax=php:
-//345678901234567890123456789012345678901234567890123456789012345678901234567890
 /**
  * Test configuration used for features
  *
- * @package tgisamples
+ * @package tgif_sample
  * @subpackage testing
  * @copyright 2009-2010 terry chay
  * @license GNU Lesser General Public License <http://www.gnu.org/licenses/lgpl.html>
@@ -14,14 +12,14 @@ return array(
     'readConfig'        => false, // don't keep loading config
     //test variables {{{
     'gld_testGlobal'    => array(
-        'construct'         => array('sample_test'),
+        'construct'         => array('\\tgif_sample\\test'),
         'version'           => 2,
         'isSmemable'        => false,
         'isMemcacheable'    => true,
     ),
     'gld_testCollection'=> array(
         'params'            => 1, //index
-        'construct'         => array('sample_member'),
+        'construct'         => array('\\tgif_sample\\member'),
         'version'           => 1,
         'isSmemable'        => false,
         'isMemcacheable'    => true,
@@ -34,4 +32,3 @@ return array(
     // }}}
     'firephp.enable'    => true,
 );
-?>

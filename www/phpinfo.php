@@ -2,7 +2,7 @@
 /**
  * phpinfo (what else?)
  *
- * @package tgisamples
+ * @package tgif_sample
  * @subpackage admin
  */
 phpinfo();

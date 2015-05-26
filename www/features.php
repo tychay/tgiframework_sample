@@ -10,7 +10,7 @@ global $_TAG;
  *
  * Test global config and variables
  *
- * @package tgisamples
+ * @package tgif_sample
  * @subpackage testing
  * @copyright 2009 terry chay <tychay@php.net>
  * @license GNU Lesser General Public License <http://www.gnu.org/licenses/lgpl.html>

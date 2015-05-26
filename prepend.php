@@ -1,32 +1,34 @@
 <?php
-// vim:set expandtab tabstop=4 shiftwidth=4 softtabstop=4 foldmethod=marker syntax=php:
-//345678901234567890123456789012345678901234567890123456789012345678901234567890
 /**
  * Initialize the configuration on every page in the TGIFramework samples. This
- * is called automatically on the page.
+ * is no longer called automatically on the page and must be included as the
+ * first line.
  *
  * You can use this script for other sites either as-is or copy and modify.
  * If you would like to use as-is, set the {@link APP_DIR} before calling this
- * script and you might want to drop in a symbol file (__symbol.php) in that
- * directory.
+ * script and you might want to drop in a symbol file (__symbol.php) in the
+ * same directory.
  *
  * If you want to copy this file, be sure to change {@link BASE_DIR},
- * {@link TGIF_DIR} etc.
+ * {@link TGIF_DIR} etc. Currently the assumption of the code tree is the 
+ * following:
  *
- * @package tgisamples
- * @copyright 2009-2010 terry chay
- * @license GNU Lesser General Public License <http://www.gnu.org/licenses/lgpl.html>
+ * * <i>base_dir</i>/sample/prepend.php: where this file is
+ * * <i>base_dir</i>/tgif: where tgiframework was checked out
+ *
+ * @package tgif_sample
+ * @copyright 2009-2015 terry chay
+ * @license MIT
  * @author terry chay <tychay@php.net>
  */
 $_start_time = microtime();
-// Set common symbols {{{
+
+// Set common symbols
 // BASE_DIR
 /**
  * The directory where the code tree is stored
  */
 define('BASE_DIR', dirname(realpath(__DIR__)));
-// }}}
-
 // TGIF_DIR
 /**
  * The directory where the framework code is stored
@@ -50,13 +52,6 @@ define('APP_CLASS_DIR', APP_DIR.DIRECTORY_SEPARATOR.'class');
  * The directory where free energy includes are stored
  */
 define('APP_INC_DIR', APP_DIR.DIRECTORY_SEPARATOR.'inc');
-// APP_CLASSMAP_PATH
-/*
- * Not reocommended way of accessing a backward compatibility class mapping
- * table. Instead, define a configuration called "classmaps" that is an array
- * hash.
- */
-//define('APP_CLASSMAP_PATH', APP_INC_DIR.DIRECTORY_SEPARATOR.'class_map_table.php');
 
 // $symbol
 $symbol_file = APP_DIR.DIRECTORY_SEPARATOR.'__symbol.php';
@@ -79,6 +74,29 @@ if (file_exists($symbol_file)) {
  */
 define('TGIF_CONF_PATH', APP_DIR.DIRECTORY_SEPARATOR.'config');
 
+/**
+ * The class loader for the samples project
+ *
+ * This emulates PSR-4 structure.
+ * 
+ * @package tgif_sample
+ * @param   $class  string the fully-qualified class to load
+ * @return  void (as per PSR-4)
+ */
+function _tgif_sample_autoload($class) {
+	static $_class_dir = '';
+	if (strpos($class, 'tgif_sample\\') !== 0) {
+		return;
+	}
+	if ( !$_class_dir ) {
+		$_class_dir = APP_DIR.DIRECTORY_SEPARATOR.'class';
+	}
+	// re-root namespace (include first separator)
+	$class = substr($class, 11);
+	$filename = $_class_dir.str_replace('\\', DIRECTORY_SEPARATOR, $class).'.php';
+	include $filename;
+}
+spl_autoload_register('_tgif_sample_autoload');
 /**
  * Load TGIFramework (in a post-Composer world)
  */
