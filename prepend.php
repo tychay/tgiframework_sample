@@ -21,7 +21,7 @@
  * @license MIT
  * @author terry chay <tychay@php.net>
  */
-$_start_time = microtime();
+$GLOBALS['_start_time'] = microtime();
 
 // Set common symbols
 // BASE_DIR
@@ -41,17 +41,6 @@ define('TGIF_DIR', BASE_DIR.'/tgif/framework');
  * The directory where app code is stored
  */
 define('APP_DIR', __DIR__);
-
-// APP_CLASS_DIR 
-/**
- * The directory where app code is stored
- */
-define('APP_CLASS_DIR', APP_DIR.DIRECTORY_SEPARATOR.'class');
-// APP_INC_DIR
-/**
- * The directory where free energy includes are stored
- */
-define('APP_INC_DIR', APP_DIR.DIRECTORY_SEPARATOR.'inc');
 
 // $symbol
 $symbol_file = APP_DIR.DIRECTORY_SEPARATOR.'__symbol.php';
