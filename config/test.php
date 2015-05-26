@@ -4,8 +4,8 @@
  *
  * @package tgif_sample
  * @subpackage testing
- * @copyright 2009-2010 terry chay
- * @license GNU Lesser General Public License <http://www.gnu.org/licenses/lgpl.html>
+ * @copyright 2009-2015 terry chay
+ * @license MIT
  * @author terry chay <tychay@php.net>
  */
 return array(

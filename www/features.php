@@ -1,8 +1,4 @@
 <?php
-require_once '../prepend.php';
-global $_TAG;
-?><html><head><title>Some examples of framework features</title>
-<body><?php
 // vim:set expandtab tabstop=4 shiftwidth=4 softtabstop=4 foldmethod=marker syntax=php:
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
 /**
@@ -12,11 +8,15 @@ global $_TAG;
  *
  * @package tgif_sample
  * @subpackage testing
- * @copyright 2009 terry chay <tychay@php.net>
- * @license GNU Lesser General Public License <http://www.gnu.org/licenses/lgpl.html>
+ * @copyright 2009-2015 terry chay <tychay@php.net>
+ * @license MIT
  * @author terry chay <tychay@php.net>
  */
-?>
+
+require_once '../prepend.php';
+global $_TAG;
+?><html><head><title>Some examples of framework features</title>
+<body>
 <h1>Features test page</h1>
 <p>This contains a list of various framework features and what they look like to the developer.</p>
 
