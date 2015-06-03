@@ -5,8 +5,8 @@
  * Configuration for compiler (testing)
  *
  * @package tgif_sample
- * @copyright 2010 terry chay
- * @license GNU Lesser General Public License <http://www.gnu.org/licenses/lgpl.html>
+ * @copyright 2010-2015 terry chay
+ * @license MIT
  * @author terry chay <tychay@php.net>
  * @todo find a better way to generate the static url?
  */
